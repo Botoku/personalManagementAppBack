@@ -1,6 +1,9 @@
-const mongoose = require('mongoose')
-const connectionString = `mongodb+srv://jbotoku:zbAzBmu3nuZV8Cjy@cluster0.1kjqivd.mongodb.net/PERSONAL-MANAGEMENT-APP`
+const mongoose = require("mongoose");
 
 
-mongoose.connect(connectionString).then(() => console.log('connected to DB')).catch(err => console.log(err))
+const connectDB = (url) => {
+  return mongoose.connect(url);
+};
 
+
+module.exports = connectDB
