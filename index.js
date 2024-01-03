@@ -4,8 +4,12 @@ const todos = require("./routes/todo");
 const connectDB = require("./db/connect");
 const notFound = require('./middleware/not-found')
 const errorHandlerMiddleware = require('./middleware/error-handler')
+const cors = require('cors')
+const helmet = require('helmet')
 require('dotenv').config()
 // Middleware
+app.use(cors())
+app.use(helmet())
 app.use(express.json());
 
 // Routes
