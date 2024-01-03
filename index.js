@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const todos = require("./routes/todo");
 const connectDB = require("./db/connect");
+const notFound = require('./middleware/not-found')
+const errorHandlerMiddleware = require('./middleware/error-handler')
 require('dotenv').config()
 // Middleware
 app.use(express.json());
@@ -12,6 +14,12 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/v1/todo", todos);
+
+
+// NOT FOUND ROUTES
+app.use(notFound)
+app.use(errorHandlerMiddleware)
+
 
 const start = async () => {
   try {
