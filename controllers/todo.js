@@ -29,9 +29,9 @@ const updateTodo = asyncWrapper(async (req, res) => {
     if (!todo) {
       return next(createCustomError(`No todo with id: ${todoID}`, 404))
     }
-    res.status(200).json(todo);
+    res.status(200).json({todo});
 })
-const deleteTodo = asyncWrapper(async (req, res) => {
+const deleteTodo = asyncWrapper(async (req, res, next) => {
     const { id: todoID } = req.params;
     const todo = await Todo.findOneAndDelete({ _id: todoID });
     if (!todo) {
