@@ -3,6 +3,7 @@ const app = express();
 const todos = require("./routes/todo");
 const tobuy = require("./routes/tobuy");
 const meals = require('./routes/meal')
+const ideas = require('./routes/idea')
 const connectDB = require("./db/connect");
 const notFound = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
@@ -22,7 +23,7 @@ app.get("/", (req, res) => {
 app.use("/api/v1/todo", todos);
 app.use("/api/v1/tobuy", tobuy);
 app.use('/api/v1/meals', meals)
-
+app.use('/api/v1/ideas', ideas)
 // NOT FOUND ROUTES
 app.use(notFound);
 app.use(errorHandlerMiddleware);
