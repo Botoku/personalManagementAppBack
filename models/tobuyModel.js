@@ -11,7 +11,7 @@ const TobuySchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        enum: ["food", "home", "pets", "general", "baby"],
+        enum: ["food", "home", "pets", "general", "baby", "jide", "paola"],
         default: "home"
     }
     
