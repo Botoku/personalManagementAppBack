@@ -11,6 +11,9 @@ const ExpenseSchema = new mongoose.Schema({
     amount: {
         type: Number,
         required: [true, "Every expense needs an amount spent"]
+    },
+    location: {
+        type: String
     }
 })
 
