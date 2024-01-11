@@ -13,6 +13,10 @@ const TobuySchema = new mongoose.Schema({
         type: String,
         enum: ["food", "home", "pets", "general", "baby", "jide", "paola"],
         default: "home"
+    },
+    boughtStatus: {
+        type: Boolean,
+        default: false
     }
     
 })
