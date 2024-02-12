@@ -19,6 +19,9 @@ const MealSchema = new mongoose.Schema({
     description: {
         type: String,
         trim: true
+    },
+    authorID : {
+        type: String
     }
 
 })

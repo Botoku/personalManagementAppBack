@@ -17,6 +17,9 @@ const TobuySchema = new mongoose.Schema({
     boughtStatus: {
         type: Boolean,
         default: false
+    },
+    authorID : {
+        type: String
     }
     
 })

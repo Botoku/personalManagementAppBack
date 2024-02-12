@@ -1,7 +1,9 @@
 const Idea = require("../models/ideaModel");
 const asyncWrapper = require("../middleware/async");
 const getAllIdeas = asyncWrapper(async (req, res) => {
-  const idea = await Idea.find({});
+  const {id: authorID} = req.params
+
+  const idea = await Idea.find({authorID: authorID});
 
   res.json({ numberOfIdeas: idea.length, idea });
 });

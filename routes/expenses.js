@@ -9,9 +9,10 @@ const {
   deleteExpenses,
 } = require("../controllers/expenses");
 
-router.route("/").get(getAllExpenses).post(createExpense);
+router.route("/").post(createExpense);
 router
   .route("/:id")
+  .get(getAllExpenses)
   .get(getIndividualExpense)
   .patch(updateExpense)
   .delete(deleteExpenses);

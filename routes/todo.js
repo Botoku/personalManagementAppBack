@@ -7,7 +7,7 @@ const {
   getTodo,
   deleteTodo,
 } = require("../controllers/todo");
-router.route("/").get(getAllTodos).post(createTodo);
-router.route("/:id").get(getTodo).patch(updateTodo).delete(deleteTodo);
+router.route("/").post(createTodo);
+router.route("/:id").get(getAllTodos).get(getTodo).patch(updateTodo).delete(deleteTodo);
 
 module.exports = router;

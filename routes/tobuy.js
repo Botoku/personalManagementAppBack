@@ -10,7 +10,7 @@ const {
   deleteTobuy,
 } = require("../controllers/tobuy");
 
-router.route("/").get(getAllTobuy).post(createTobuy);
-router.route("/:id").get(getTobuy).patch(updateTobuy).delete(deleteTobuy);
+router.route("/").post(createTobuy);
+router.route("/:id").get(getAllTobuy).get(getTobuy).patch(updateTobuy).delete(deleteTobuy);
 
 module.exports = router

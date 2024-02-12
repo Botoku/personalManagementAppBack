@@ -3,7 +3,8 @@ const asyncWrapper = require("../middleware/async");
 const {createCustomError} = require('../errors/custom-error')
 
 const getAllTodos = asyncWrapper(async (req, res) => {
-  const todos = await Todo.find({});
+  const {id: authorID} = req.params
+  const todos = await Todo.find({authorID: authorID});
   res.json({ numberOfTodos: todos.length, todos });
 });
 const createTodo = asyncWrapper(async (req, res) => {

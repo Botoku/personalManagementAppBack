@@ -1,7 +1,8 @@
 const asyncWrapper = require("../middleware/async");
 const Expense = require("../models/expenseModel");
 const getAllExpenses = asyncWrapper(async (req, res) => {
-  const expenses = await Expense.find({});
+  const {id: authorID} = req.params
+  const expenses = await Expense.find({authorID: authorID});
   res.json({ numberOfExpenses: expenses.length, expenses });
 });
 const createExpense = asyncWrapper(async (req, res) => {

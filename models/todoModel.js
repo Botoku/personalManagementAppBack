@@ -15,6 +15,9 @@ const TodoSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  authorID: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("Todo", TodoSchema);

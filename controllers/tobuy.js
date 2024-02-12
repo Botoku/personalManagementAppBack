@@ -3,7 +3,8 @@ const asyncWrapper = require("../middleware/async");
 const { createCustomError } = require("../errors/custom-error");
 
 const getAllTobuy = asyncWrapper(async (req, res) => {
-  const tobuy = await Tobuy.find({});
+  const {id: authorID} = req.params
+  const tobuy = await Tobuy.find({authorID: authorID});
   res.json({ numberOfTobuy: tobuy.length, tobuy });
 });
 const createTobuy = asyncWrapper(async (req, res) => {

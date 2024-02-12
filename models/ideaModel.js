@@ -8,6 +8,9 @@ const IdeaSchema = new mongoose.Schema({
     completedStatus: {
         type: Boolean,
         default: false
+    },
+    authorID : {
+        type: String
     }
 })
 

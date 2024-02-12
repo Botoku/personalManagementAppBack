@@ -9,9 +9,10 @@ const {
 
 const router = express.Router();
 
-router.route("/").get(getAllMeals).post(createMeal);
+router.route("/").post(createMeal);
 router
   .route("/:id")
+  .get(getAllMeals)
   .get(getIndividualMeal)
   .patch(updateIndividualMeal)
   .delete(deleteMeal);

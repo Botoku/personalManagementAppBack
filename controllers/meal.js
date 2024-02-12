@@ -1,7 +1,9 @@
 const asyncWrapper = require("../middleware/async");
 const Meal = require("../models/mealModel");
 const getAllMeals = asyncWrapper(async (req, res) => {
-  const meals = await Meal.find({});
+  const {id: authorID} = req.params
+
+  const meals = await Meal.find({authorID: authorID});
   res.json({ numberOfMeals: meals.length, meals });
 });
 const createMeal = asyncWrapper(async (req, res) => {

@@ -14,6 +14,9 @@ const ExpenseSchema = new mongoose.Schema({
     },
     location: {
         type: String
+    },
+    authorID : {
+        type: String
     }
 })
 
